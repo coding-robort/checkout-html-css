@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Checkout page by Robort</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="grid-box">
+        <div class="left-col">
+            <div class="top-box">
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+
+                    <!-- Fulll-width images with number and caption text -->
+                    <div class="mySlides fade">
+                        <img src="imgs/shoe1.jpg">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="imgs/shoe2.jpg">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="imgs/shoe3.jpg">
+                    </div>
+
+                </div>
+                <br>
+
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+            <div class="bottom-box">
+                <h2 class="balance">New Balance 564</h2>
+                <p class="desc">Gray/Green WL565 Men Shoes</p>
+                <p class="dollars">$69.95</p>
+            </div>
+        </div>
+
+        <div class="right-col">
+            <div class="card-contents">
+                <div class="visa-box">
+                    <img src="imgs/chip.png" alt="visa chip">
+                    <p class="cname">Visa Card</p>
+                </div>
+
+                <div class="item-box">
+                    <p class="item-head">Card Holder</p>
+                    <p class="item-value">Robort H. Gabriel</p>
+                </div>
+                <div class="item-box">
+                    <p class="item-head">Card Number</p>
+                    <p class="item-value">6152 8826 0726 8992</p>
+                </div>
+                <div class="date-cvc-box">
+                    <div class="item-box">
+                        <p class="item-head">Expirition Date</p>
+                        <p class="item-value">03/24</p>
+                    </div>
+                    <div class="cvc-box">
+                        <p class="item-head">CVC</p>
+                        <p class="item-value">***</p>
+                    </div>
+                </div>
+
+                <button>Purchase <img src="imgs/arrow.png" alt="buy"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+
+</html>
